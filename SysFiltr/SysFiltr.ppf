@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pinplan
+ variation_name="IIR_0"
+ megafunction_name="IIR"
+ intended_family="Cyclone V"
+ specifies="all_ports">
+ <global>
+  <pin name="clk_clk" direction="input" scope="external" />
+  <pin name="iir_direct_opt_i[2..0]" direction="input" scope="external" />
+  <pin name="iir_direct_opt_o[2..0]" direction="input" scope="external" />
+  <pin name="iir_direct_start" direction="input" scope="external" />
+  <pin name="iir_direct_clk_en" direction="input" scope="external" />
+  <pin name="iir_export_i_signal[31..0]" direction="input" scope="external" />
+  <pin name="iir_export_o_signal[31..0]" direction="output" scope="external" />
+  <pin name="reset_reset_n" direction="input" scope="external" />
+ </global>
+</pinplan>

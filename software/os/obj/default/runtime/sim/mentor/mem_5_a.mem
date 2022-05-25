@@ -1,0 +1,14 @@
+// memory data file (do not edit the following line - required for mem load use)
+// instance=/TOP/mem
+// format=mti addressradix=d dataradix=d version=1.0 wordsperline=1
+0: -28173255
+1: 28173255
+2: 75574957
+3: 98982144
+4: 90963199
+5: 54064081
+6: 0
+7: -54064081
+8: -90963199
+9: -98982144
+10: -75574957
