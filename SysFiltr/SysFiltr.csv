@@ -1,12 +1,12 @@
-# system info SysFiltr on 2022.05.22.16:17:02
+# system info SysFiltr on 2022.06.14.14:16:02
 system_info:
 name,value
 DEVICE,5CSEMA5F31C6
 DEVICE_FAMILY,Cyclone V
-GENERATION_ID,1653203790
+GENERATION_ID,1655183728
 #
 #
-# Files generated for SysFiltr on 2022.05.22.16:17:02
+# Files generated for SysFiltr on 2022.06.14.14:16:02
 files:
 filepath,kind,attributes,module,is_top
 simulation/SysFiltr.v,VERILOG,,SysFiltr,true
@@ -57,6 +57,7 @@ simulation/submodules/NCO.qsys,OTHER,,Decoder,false
 simulation/submodules/Filtr.sv,SYSTEM_VERILOG,,Decoder,false
 simulation/submodules/Arith.sv,SYSTEM_VERILOG,,Decoder,false
 simulation/submodules/Decider.sv,SYSTEM_VERILOG,,Decoder,false
+simulation/submodules/FP_ABS.v,VERILOG,,Decoder,false
 simulation/submodules/SysFiltr_ram.hex,HEX,,SysFiltr_ram,false
 simulation/submodules/SysFiltr_ram.v,VERILOG,,SysFiltr_ram,false
 simulation/submodules/SysFiltr_mm_interconnect_0.v,VERILOG,,SysFiltr_mm_interconnect_0,false

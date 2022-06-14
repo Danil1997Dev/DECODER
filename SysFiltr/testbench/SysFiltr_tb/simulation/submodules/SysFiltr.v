@@ -4,15 +4,21 @@
 
 `timescale 1 ps / 1 ps
 module SysFiltr #(parameter
-CLK_REF = 50_000_000,
-SAMPL_T = 1_000_000,
-FRQ_SIGNAL = 440_000,
-FRQ_DELT = 44_000 )(
-		input  wire        clk_clk,                 //            clk.clk
-		input  wire [31:0] decoder_expend_signal_i, // decoder_expend.signal_i
-		output wire        decoder_expend_indicate, //               .indicate
-		input  wire        decoder_expend_work,     //               .work
-		input  wire        reset_reset_n            //          reset.reset_n
+CLK_PRD = 20,// период тактового сигнала в ns
+CLK_REF = 50_000_000,// тактоая частота
+CLK_SAMPL = 50_000_000,// честота дискретезации
+FRQ = 440_000,// честота сигнала
+T=CLK_REF/CLK_SAMPL, // период дискретизации  в тактах
+N=CLK_SAMPL/FRQ,// период входного сигнала в тактах
+K=600,// калчество периодов входного сигнала
+WIDTH = 14//разрядность АЦП
+)(
+		input  wire        clk_clk,                     //            clk.clk
+		output wire        decoder_expend_indicate,     // decoder_expend.indicate
+		input  wire        decoder_expend_work,         //               .work
+		input  wire [WIDTH-1:0] decoder_expend_signal_adc_i, //               .signal_adc_i
+		input  wire [WIDTH-1:0] decoder_expend_signal_adc_u, //               .signal_adc_u
+		input  wire        reset_reset_n                //          reset.reset_n
 	);
 
 	wire  [31:0] cpu_data_master_readdata;                          // mm_interconnect_0:cpu_data_master_readdata -> cpu:d_readdata
@@ -89,18 +95,20 @@ FRQ_DELT = 44_000 )(
 
 	Decoder #(
 		.CLK_REF    (CLK_REF),
-		.SAMPL_T    (SAMPL_T),
-		.FRQ_SIGNAL (FRQ_SIGNAL),
-		.FRQ_DELT   (FRQ_DELT)
+		.SAMPL_T    (CLK_SAMPL),
+		.FRQ_SIGNAL (FRQ),
+		.FRQ_DELT   (44_000),
+		.WIDTH      (WIDTH)
 	) decoder (
-		.clk      (clk_clk),                                          //        clock.clk
-		.reset_l  (~rst_controller_001_reset_out_reset),              //   reset_sink.reset_n
-		.address  (mm_interconnect_0_decoder_avalon_slave_address),   // avalon_slave.address
-		.data     (mm_interconnect_0_decoder_avalon_slave_writedata), //             .writedata
-		.writ     (mm_interconnect_0_decoder_avalon_slave_write),     //             .write
-		.signal_i (decoder_expend_signal_i),                          //      conduit.signal_i
-		.indicate (decoder_expend_indicate),                          //             .indicate
-		.work     (decoder_expend_work)                               //             .work
+		.clk          (clk_clk),                                          //        clock.clk
+		.reset_l      (~rst_controller_001_reset_out_reset),              //   reset_sink.reset_n
+		.address      (mm_interconnect_0_decoder_avalon_slave_address),   // avalon_slave.address
+		.data         (mm_interconnect_0_decoder_avalon_slave_writedata), //             .writedata
+		.writ         (mm_interconnect_0_decoder_avalon_slave_write),     //             .write
+		.indicate     (decoder_expend_indicate),                          //      conduit.indicate
+		.work         (decoder_expend_work),                              //             .work
+		.signal_adc_I (decoder_expend_signal_adc_i),                      //             .signal_adc_i
+		.signal_adc_U (decoder_expend_signal_adc_u)                       //             .signal_adc_u
 	);
 
 	SysFiltr_ram ram (

@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2022.05.22.16:17:04
+# ACDS 18.1 625 win32 2022.06.14.14:16:04
 
 # ----------------------------------------
 # ncsim - auto-generated simulation script
@@ -106,7 +106,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2022.05.22.16:17:04
+# ACDS 18.1 625 win32 2022.06.14.14:16:04
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="SysFiltr"
@@ -314,6 +314,7 @@ if [ $SKIP_COM -eq 0 ]; then
   ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/Filtr.sv"                                                        -work decoder                             -cdslib ./cds_libs/decoder.cds.lib                            
   ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/Arith.sv"                                                        -work decoder                             -cdslib ./cds_libs/decoder.cds.lib                            
   ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/Decider.sv"                                                      -work decoder                             -cdslib ./cds_libs/decoder.cds.lib                            
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/FP_ABS.v"                                                        -work decoder                             -cdslib ./cds_libs/decoder.cds.lib                            
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/SysFiltr_cpu.v"                                                  -work cpu                                 -cdslib ./cds_libs/cpu.cds.lib                                
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/SysFiltr.v"                                                                                                                                                                         
 fi

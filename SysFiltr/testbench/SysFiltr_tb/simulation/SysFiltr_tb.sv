@@ -8,29 +8,37 @@
 module SysFiltr_tb #(parameter
 CLK_PRD = 20,// период тактового сигнала в ns
 CLK_REF = 50_000_000,// тактоая частота
-CLK_SAMPL = 50_000_000,// честота дискретезации
+CLK_SAMPL = 25_000_000,// частота дискретезации
 FRQ = 440_000,// честота сигнала
 T=CLK_REF/CLK_SAMPL, // период дискретизации  в тактах
 N=CLK_SAMPL/FRQ,// период входного сигнала в тактах
-K=350// калчество периодов входного сигнала
+K=600,// калчество периодов входного сигнала
+WIDTH = 20//разрядность АЦП
 )(); 
-	logic [31:0] signal_i;
+	logic [WIDTH-1:0] signal_adc_i,signal_adc_u;
 	logic indicate; 
 	logic work = 1;
 
-	logic [31:0] mema [0:K*N-1];  
-	logic [31:0] memb [0:K*N-1];
-	logic [31:0] memc [0:K*N-1]; 
+  logic [31:0] mema_u [0:K*N-1];  
+  logic [31:0] memb_u [0:K*N-1];
+  logic [31:0] memc_u [0:K*N-1];
+
+  logic [31:0] mema_i [0:K*N-1];  
+  logic [31:0] memb_i [0:K*N-1];
+  logic [31:0] memc_i [0:K*N-1];
+
+
 
 	logic sysfiltr_inst_clk_bfm_clk_clk;       // SysFiltr_inst_clk_bfm:clk -> [SysFiltr_inst:clk_clk, SysFiltr_inst_reset_bfm:clk]
 	logic sysfiltr_inst_reset_bfm_reset_reset; // SysFiltr_inst_reset_bfm:reset -> SysFiltr_inst:reset_reset_n
 
-	SysFiltr dut (
-		.clk_clk                 (sysfiltr_inst_clk_bfm_clk_clk),       //            clk.clk 
-		.decoder_expend_signal_i (signal_i),                                    //               .signal_i
-		.decoder_expend_work (work),                                    //               .work
-		.decoder_expend_indicate (indicate),                                    //               .indicate
-		.reset_reset_n           (sysfiltr_inst_reset_bfm_reset_reset)  //          reset.reset_n
+	SysFiltr #(.CLK_REF(CLK_REF),.CLK_SAMPL(CLK_SAMPL),.FRQ(FRQ),.WIDTH(WIDTH)) dut (
+		.clk_clk                     (sysfiltr_inst_clk_bfm_clk_clk),       //            clk.clk
+		.decoder_expend_indicate     (indicate),                                    // decoder_expend.indicate
+		.decoder_expend_work         (work),                                    //               .work
+		.decoder_expend_signal_adc_i (signal_adc_i),                                    //               .signal_adc_i
+		.decoder_expend_signal_adc_u (signal_adc_u),                                    //               .signal_adc_u
+		.reset_reset_n               (sysfiltr_inst_reset_bfm_reset_reset)  //          reset.reset_n
 	);
   
 	altera_avalon_clock_source #(
@@ -52,25 +60,25 @@ initial
 begin 
  wait (sysfiltr_inst_reset_bfm_reset_reset);
 #100000
+work = 1;
   sina();
 //  #10000 
-  sinb(); 
+//  sinb(); 
 //  #10000
-  sinc(); 
+//  sinc(); 
   #10000 $stop;
 end  
 
 task sina(); 
-  begin   
-  signal_i = 0; 
-  @(posedge sysfiltr_inst_clk_bfm_clk_clk);
-  signal_i = 0;     
+  begin 
+  @(posedge sysfiltr_inst_clk_bfm_clk_clk);  
     for (int i=0;i<K*N;i++)
       begin
         repeat(T) begin
         @(posedge sysfiltr_inst_clk_bfm_clk_clk);  
-        signal_i = mema[i];   end   
-      end 
+        signal_adc_u = mema_u[i];
+        signal_adc_i = mema_i[i];   end   
+      end  
   end
 endtask
 
@@ -81,7 +89,8 @@ task sinb();
       begin
         repeat(T) begin
         @(posedge sysfiltr_inst_clk_bfm_clk_clk);  
-        signal_i = memb[i];   end   
+        signal_adc_u = memb_u[i];
+        signal_adc_i = memb_i[i];   end   
       end 
   end
 endtask
@@ -92,11 +101,12 @@ task sinc();
     for (int i=0;i<K*N;i++)
       begin
         repeat(T) begin
-        @(posedge sysfiltr_inst_clk_bfm_clk_clk);  
-        signal_i = memc[i];   end   
+        @(posedge sysfiltr_inst_clk_bfm_clk_clk);
+        signal_adc_u = memc_u[i];
+        signal_adc_i = memc_i[i];   end   
       end 
   end
-endtask 
+endtask
 
 endmodule
  

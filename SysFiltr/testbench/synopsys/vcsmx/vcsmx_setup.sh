@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2022.05.22.16:19:11
+# ACDS 18.1 625 win32 2022.06.14.14:17:49
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2022.05.22.16:19:11
+# ACDS 18.1 625 win32 2022.06.14.14:17:49
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="SysFiltr_tb"
@@ -323,6 +323,7 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SysFiltr_tb/simulation/submodules/Filtr.sv"                                                        -work decoder                            
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SysFiltr_tb/simulation/submodules/Arith.sv"                                                        -work decoder                            
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SysFiltr_tb/simulation/submodules/Decider.sv"                                                      -work decoder                            
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/SysFiltr_tb/simulation/submodules/FP_ABS.v"                                                        -work decoder                            
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/SysFiltr_tb/simulation/submodules/SysFiltr_cpu.v"                                                  -work cpu                                
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SysFiltr_tb/simulation/submodules/altera_avalon_reset_source.sv"                                   -work SysFiltr_inst_reset_bfm            
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SysFiltr_tb/simulation/submodules/altera_avalon_clock_source.sv"                                   -work SysFiltr_inst_clk_bfm              

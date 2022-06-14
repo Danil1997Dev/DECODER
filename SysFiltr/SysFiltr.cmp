@@ -1,10 +1,11 @@
 	component SysFiltr is
 		port (
-			clk_clk                 : in  std_logic                     := 'X';             -- clk
-			decoder_expend_signal_i : in  std_logic_vector(31 downto 0) := (others => 'X'); -- signal_i
-			decoder_expend_indicate : out std_logic;                                        -- indicate
-			decoder_expend_work     : in  std_logic                     := 'X';             -- work
-			reset_reset_n           : in  std_logic                     := 'X'              -- reset_n
+			clk_clk                     : in  std_logic                     := 'X';             -- clk
+			decoder_expend_indicate     : out std_logic;                                        -- indicate
+			decoder_expend_work         : in  std_logic                     := 'X';             -- work
+			decoder_expend_signal_adc_i : in  std_logic_vector(13 downto 0) := (others => 'X'); -- signal_adc_i
+			decoder_expend_signal_adc_u : in  std_logic_vector(13 downto 0) := (others => 'X'); -- signal_adc_u
+			reset_reset_n               : in  std_logic                     := 'X'              -- reset_n
 		);
 	end component SysFiltr;
 

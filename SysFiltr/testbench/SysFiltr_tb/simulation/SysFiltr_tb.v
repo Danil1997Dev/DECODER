@@ -10,11 +10,12 @@ module SysFiltr_tb (
 	wire    sysfiltr_inst_reset_bfm_reset_reset; // SysFiltr_inst_reset_bfm:reset -> SysFiltr_inst:reset_reset_n
 
 	SysFiltr sysfiltr_inst (
-		.clk_clk                 (sysfiltr_inst_clk_bfm_clk_clk),       //            clk.clk
-		.decoder_expend_signal_i (),                                    // decoder_expend.signal_i
-		.decoder_expend_indicate (),                                    //               .indicate
-		.decoder_expend_work     (),                                    //               .work
-		.reset_reset_n           (sysfiltr_inst_reset_bfm_reset_reset)  //          reset.reset_n
+		.clk_clk                     (sysfiltr_inst_clk_bfm_clk_clk),       //            clk.clk
+		.decoder_expend_indicate     (),                                    // decoder_expend.indicate
+		.decoder_expend_work         (),                                    //               .work
+		.decoder_expend_signal_adc_i (),                                    //               .signal_adc_i
+		.decoder_expend_signal_adc_u (),                                    //               .signal_adc_u
+		.reset_reset_n               (sysfiltr_inst_reset_bfm_reset_reset)  //          reset.reset_n
 	);
 
 	altera_avalon_clock_source #(

@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2022.05.22.16:19:11
+# ACDS 18.1 625 win32 2022.06.14.14:17:49
 # ----------------------------------------
 # Auto-generated simulation script rivierapro_setup.tcl
 # ----------------------------------------
@@ -376,6 +376,7 @@ alias com {
   eval  vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/SysFiltr_tb/simulation/submodules/Filtr.sv"                                                        -l altera_common_sv_packages -work decoder                            
   eval  vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/SysFiltr_tb/simulation/submodules/Arith.sv"                                                        -l altera_common_sv_packages -work decoder                            
   eval  vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/SysFiltr_tb/simulation/submodules/Decider.sv"                                                      -l altera_common_sv_packages -work decoder                            
+  eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SysFiltr_tb/simulation/submodules/FP_ABS.v"                                                                                     -work decoder                            
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SysFiltr_tb/simulation/submodules/SysFiltr_cpu.v"                                                                               -work cpu                                
   eval  vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/SysFiltr_tb/simulation/submodules/altera_avalon_reset_source.sv"                                   -l altera_common_sv_packages -work SysFiltr_inst_reset_bfm            
   eval  vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/SysFiltr_tb/simulation/submodules/altera_avalon_clock_source.sv"                                   -l altera_common_sv_packages -work SysFiltr_inst_clk_bfm              

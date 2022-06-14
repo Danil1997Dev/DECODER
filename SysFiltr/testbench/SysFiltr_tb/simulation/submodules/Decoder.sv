@@ -3,6 +3,7 @@ CLK_REF = 50_000_000,
 SAMPL_T = 1_000_000,
 FRQ_SIGNAL = 440_000,
 FRQ_DELT = 44_000,
+WIDTH = 14,
 
 FRQ_SIGNAL_MAX = FRQ_SIGNAL+FRQ_DELT,
 FRQ_SIGNAL_MIN = FRQ_SIGNAL-FRQ_DELT,
@@ -11,19 +12,23 @@ N_MIN = CLK_REF/FRQ_SIGNAL_MAX,
 W_N_MAX = $clog2(N_MAX),
 W_N_MIN = $clog2(N_MIN),
 T = CLK_REF/SAMPL_T,
-N = SAMPL_T/FRQ_SIGNAL)
+N = SAMPL_T/FRQ_SIGNAL,
+SHIFT = 32 - WIDTH
+)
 (
   input clk,reset_l,writ,work,
   input [4:0] address, 
   input [31:0] data, 
-  input signed [31:0] signal_i, 
+  input signed [WIDTH-1:0] signal_adc_I,signal_adc_U, 
   output logic indicate
 );
   logic [2:0] wr;
   logic clk_en,start,enabel,valid_gen,valid;
-  logic signed [31:0] sin,cos,relat_signal,i,q,i_int,q_int,relax_freq_buf,relax_freq;
-  logic signed [31:0] small_i,small_q;
-  logic signed [63:0] i_chanal,q_chanal;
+  logic signed [31:0] sin,cos,relat_signal,i,q,u,u_int,i_int,q_int,relax_freq_buf,relax_freq;
+  logic signed [31:0] signal_i = 0;
+  logic signed [31:0] signal_u = 0;
+  logic signed [31:0] small_i,small_q,small_u;
+  logic signed [63:0] i_chanal,q_chanal,u_chanal;
 
   always_ff @(posedge clk or negedge reset_l)
     begin
@@ -38,7 +43,7 @@ N = SAMPL_T/FRQ_SIGNAL)
 		    if (writ)
 			   begin
 				 case (address[4:3]) 
-					 2'b01:begin
+					 2'b01:begin 
 								wr[0] = 1'b1;
 								wr[1] = 1'b0;
 								wr[2] = 1'b0;
@@ -84,10 +89,17 @@ N = SAMPL_T/FRQ_SIGNAL)
 		end
   end
   
+  always @(*)
+    begin
+      signal_i[31:31-WIDTH] = signal_adc_I;
+      signal_u[31:31-WIDTH] = signal_adc_U;
+	 end
+  
   always @(posedge clk)
 	  begin 
+		 u_chanal <= sin*signal_u;
 	    i_chanal <= sin*signal_i;
-		 q_chanal <= cos*signal_i;
+		 q_chanal <= cos*signal_i; 
 		 if (valid)
 		   begin
 		     relax_freq <= relax_freq_buf;
@@ -101,13 +113,22 @@ N = SAMPL_T/FRQ_SIGNAL)
   Generator #(.W_N_MAX(W_N_MAX) ) gen_inst (  .clk(clk), 
 		.reset_l   (reset_l),   // rst.reset_n
 		.clk_en     (clk_en),     //  in.clken
-		.enabel(clk_en),
-//	   .address(address[2:0]),
-//	   .data(data),
-		.signal (signal_i), //    .phi_inc_i
+		.enabel(clk_en), 
+		.signal (signal_u), //    .phi_inc_i
 		.sin    (sin),    // out.fsin_o
 		.cos    (cos),    //    .fcos_o
 		.valid_gen (valid_gen));  //    .out_valid); 
+		
+  Filtr # (.CLK_REF(CLK_REF), .SAMPL_T(SAMPL_T), .FRQ_SIGNAL(FRQ_SIGNAL)) filtr_u_inst (		.clk       (clk),       // clk.clk
+		.reset_l   (reset_l),   // rst.reset_n
+		.clk_en     (clk_en),     //  in.clken 
+		.enabel(wr[0]),
+	   .address(address[2:0]),
+		.start(start),
+	   .i_signal(u_chanal[63:32]), 
+	   .data(data),
+	   .o_signal(u),
+	   .o_signal_int(u_int)		);
 		
   Filtr # (.CLK_REF(CLK_REF), .SAMPL_T(SAMPL_T), .FRQ_SIGNAL(FRQ_SIGNAL)) filtr_i_inst (		.clk       (clk),       // clk.clk
 		.reset_l   (reset_l),   // rst.reset_n
@@ -136,6 +157,7 @@ N = SAMPL_T/FRQ_SIGNAL)
 		.enabel(wr[1]),
 	   .address(address[2:0]),
 	   .data(data),
+	   .u(u), 
 	   .i(i), 
 	   .q(q),
 	   .reset_l(reset_l),  
@@ -153,6 +175,7 @@ N = SAMPL_T/FRQ_SIGNAL)
 	   .valid( ), 
 	   .indicate( indicate ));
 
+  assign small_u = u_chanal[63:32];
   assign small_i = i_chanal[63:32];
   assign small_q = q_chanal[63:32];
 

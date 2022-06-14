@@ -20,16 +20,25 @@ N = SAMPL_T/FRQ_SIGNAL)
   output logic [31:0] sin,cos,
   output logic valid_gen
 );
-  
+
+  bit phath_rst,blok;
   logic [31:0] phi = 36_151_557;
   logic signed [31:0] delta = 0;
   logic signed [63:0] sub = 0;
-  const logic signed [31:0] MULT = 300_000;
+  const logic signed [31:0] MULT = 310_000;
   
   always @(posedge clk)
-	  begin 
-	    sub <= MULT*delta;
-	    phi <= phi - sub[31:0];//sub[63:32] 250_000*delta
+	  begin  
+	    if (blok)
+		   begin
+			  sub <= 0;
+			  phi <= phi - sub[31:0];
+			end
+	    else
+		   begin
+			  sub <= MULT*delta;
+			  phi <= phi - sub[31:0];//sub[63:32] 250_000*delta 
+			end
 	  end  
  
   FLL #(.W_N_MAX(W_N_MAX) ) fll_inst (  .clk(clk), 
@@ -37,10 +46,14 @@ N = SAMPL_T/FRQ_SIGNAL)
 																	.reset_l(reset_l), 
 																	.signal_input(signal),
 																	.signal_gen(sin),
+																	.ph_en(phath_rst),
+																	.vi(vi),
+																	.vg(vg),
+																	.blok(blok),
 																	.delta(delta));
   NCO nco_inst (		.clk       (clk),       // clk.clk
 		.reset_n   (reset_l),   // rst.reset_n
-		.clken     (enabel),     //  in.clken
+		.clken     (enabel && ~phath_rst),     //  in.clken
 		.phi_inc_i (phi), //    .phi_inc_i
 		.fsin_o    (sin),    // out.fsin_o
 		.fcos_o    (cos),    //    .fcos_o

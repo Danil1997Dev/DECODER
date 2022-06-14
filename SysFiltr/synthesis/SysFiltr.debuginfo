@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="SysFiltr" kind="system" version="18.1" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2022.05.22.16:17:38 -->
+ <!-- 2022.06.14.14:16:39 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1653203828</value>
+  <value>1655183768</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -3688,7 +3688,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="SAMPL_T">
    <type>int</type>
-   <value>5000000</value>
+   <value>50000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -3705,6 +3705,14 @@ the requested settings for a module instance. -->
   <parameter name="FRQ_DELT">
    <type>int</type>
    <value>44000</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="WIDTH">
+   <type>int</type>
+   <value>14</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -4208,12 +4216,6 @@ parameters are a RESULT of the module parameters. -->
    <type>conduit</type>
    <isStart>false</isStart>
    <port>
-    <name>signal_i</name>
-    <direction>Input</direction>
-    <width>32</width>
-    <role>signal_i</role>
-   </port>
-   <port>
     <name>indicate</name>
     <direction>Output</direction>
     <width>1</width>
@@ -4224,6 +4226,18 @@ parameters are a RESULT of the module parameters. -->
     <direction>Input</direction>
     <width>1</width>
     <role>work</role>
+   </port>
+   <port>
+    <name>signal_adc_I</name>
+    <direction>Input</direction>
+    <width>14</width>
+    <role>signal_adc_i</role>
+   </port>
+   <port>
+    <name>signal_adc_U</name>
+    <direction>Input</direction>
+    <width>14</width>
+    <role>signal_adc_u</role>
    </port>
   </interface>
  </module>
@@ -10016,5 +10030,5 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <reportVersion>18.1 625</reportVersion>
- <uniqueIdentifier>00FF019A7AE700000180EAA0905B</uniqueIdentifier>
+ <uniqueIdentifier>00FF019A7AE70000018160A40E7A</uniqueIdentifier>
 </EnsembleReport>

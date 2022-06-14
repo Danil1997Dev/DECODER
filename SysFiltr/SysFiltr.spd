@@ -358,6 +358,10 @@
    type="SYSTEM_VERILOG"
    library="decoder" />
  <file
+   path="simulation/submodules/FP_ABS.v"
+   type="VERILOG"
+   library="decoder" />
+ <file
    path="simulation/submodules/SysFiltr_cpu.v"
    type="VERILOG"
    library="cpu" />

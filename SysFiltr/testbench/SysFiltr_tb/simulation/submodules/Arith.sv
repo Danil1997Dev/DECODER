@@ -16,12 +16,12 @@ N = SAMPL_T/FRQ_SIGNAL)
   input clk,reset_l,clk_en,enabel,
   input [2:0] address,
   input [31:0] data,
-  input [31:0] i,q,
+  input [31:0] i,q,u,
   output logic signed [31:0] signal_o,
   output valid
 );
-  logic done_rel,done_mult,done_cnv,start;
-  logic [31:0] relat_signal,mult_signal,abs_signal,o_signal;
+  logic done_rel,done_mult,done_cnv,start,done_mult_i,done_mult_q;
+  logic [31:0] relat_signal,mult_signal,abs_signal,o_signal,i_mult,q_mult;
   logic [31:0] Ku;
  
   assign valid = done_cnv && done_mult;
@@ -46,14 +46,36 @@ N = SAMPL_T/FRQ_SIGNAL)
 		end
   end
   
-  Convers div ( .clk(clk), 
+  Convers mult_i ( .clk(clk), 
 	   .clk_en(clk_en), 
 	   .dataa(i), 
-	   .datab(q),
-	   .n(7), 
+	   .datab(u),
+	   .n(4), 
 	   .reset(!reset_l), 
 	   .reset_req(0), 
 	   .start(start),
+	   .done(done_mult_i), 
+	   .result( i_mult ));
+		
+  Convers mult_q ( .clk(clk), 
+	   .clk_en(clk_en), 
+	   .dataa(q), 
+	   .datab(u),
+	   .n(4), 
+	   .reset(!reset_l), 
+	   .reset_req(0), 
+	   .start(start),
+	   .done(done_mult_q), 
+	   .result( q_mult ));
+
+  Convers div ( .clk(clk), 
+	   .clk_en(clk_en), 
+	   .dataa(i_mult), 
+	   .datab(q_mult),
+	   .n(7), 
+	   .reset(!reset_l), 
+	   .reset_req(0), 
+	   .start(done_mult_i && done_mult_q),
 	   .done(done_rel), 
 	   .result( relat_signal ));
 

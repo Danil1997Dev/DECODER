@@ -1,10 +1,10 @@
-16:26:36 **** Clean-only build of configuration Nios II for project os_bsp ****
+14:29:09 **** Clean-only build of configuration Nios II for project os_bsp ****
 make clean 
 [BSP clean complete]
-16:26:40 **** Clean-only build of configuration Nios II for project os ****
+14:29:13 **** Clean-only build of configuration Nios II for project os ****
 make clean 
 [os clean complete]
-16:28:18 **** Build of configuration Nios II for project os ****
+15:13:23 **** Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
@@ -180,325 +180,67 @@ nios2-elf-ar -src libhal_bsp.a obj/HAL/src/alt_alarm_start.o obj/HAL/src/alt_bus
 [BSP build complete]
 Info: Compiling sem.c to obj/default/sem.o
 nios2-elf-gcc -xc -MP -MMD -c -I../os_bsp//HAL/inc -I../os_bsp/ -I../os_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_SIM_OPTIMIZE -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/sem.o sem.c
+sem.c:14:13: error: invalid operands to binary ^ (have 'double' and 'int')
+   3.05482*10^(-7),
+             ^
+sem.c:15:13: error: invalid operands to binary ^ (have 'double' and 'int')
+   6.10964*10^(-7),
+             ^
+sem.c:16:13: error: invalid operands to binary ^ (have 'double' and 'int')
+   3.05482*10^(-7),
+             ^
 sem.c: In function 'main':
 sem.c:49:2: warning: implicit declaration of function 'alt_dcache_flush' [-Wimplicit-function-declaration]
   alt_dcache_flush();
   ^
-Info: Linking RUN_ON_HDL_SIMULATOR_ONLY_os.elf
-nios2-elf-g++  -T'../os_bsp//linker.x' -msys-crt0='../os_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../os_bsp/  -msmallc  -Wl,-Map=RUN_ON_HDL_SIMULATOR_ONLY_os.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o RUN_ON_HDL_SIMULATOR_ONLY_os.elf obj/default/sem.o -lm -msys-lib=m
-nios2-elf-insert RUN_ON_HDL_SIMULATOR_ONLY_os.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev none --stdin_dev none --stdout_dev none --sopc_system_name SysFiltr --quartus_project_dir "D:/intelFPGA/18.1/NIOS_IIR" --jdi ../..//output_files/NIOS_IIR.jdi --sopcinfo D:/intelFPGA/18.1/NIOS_IIR/software/os_bsp/../../SysFiltr.sopcinfo
-Info: (RUN_ON_HDL_SIMULATOR_ONLY_os.elf) 3352 Bytes program size (code + initialized data).
-Info:                                    124 KBytes free for stack + heap.
-Info: Creating RUN_ON_HDL_SIMULATOR_ONLY_os.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source RUN_ON_HDL_SIMULATOR_ONLY_os.elf >RUN_ON_HDL_SIMULATOR_ONLY_os.objdump
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-16:28:33 **** Build of configuration Nios II for project os_bsp ****
+make: *** [obj/default/sem.o] Error 1
+15:13:36 **** Build of configuration Nios II for project os_bsp ****
 make all 
 [BSP build complete]
-16:42:34 **** Incremental Build of configuration Nios II for project os ****
+15:13:54 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-16:42:35 **** Incremental Build of configuration Nios II for project os_bsp ****
+Info: Compiling sem.c to obj/default/sem.o
+nios2-elf-gcc -xc -MP -MMD -c -I../os_bsp//HAL/inc -I../os_bsp/ -I../os_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_SIM_OPTIMIZE -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/sem.o sem.c
+sem.c:14:14: error: invalid type argument of unary '*' (have 'int')
+   3.05482*10**(-7),
+              ^
+sem.c:15:14: error: invalid type argument of unary '*' (have 'int')
+   6.10964*10**(-7),
+              ^
+sem.c:16:14: error: invalid type argument of unary '*' (have 'int')
+   3.05482*10**(-7),
+              ^
+sem.c: In function 'main':
+sem.c:49:2: warning: implicit declaration of function 'alt_dcache_flush' [-Wimplicit-function-declaration]
+  alt_dcache_flush();
+  ^
+make: *** [obj/default/sem.o] Error 1
+15:13:55 **** Incremental Build of configuration Nios II for project os_bsp ****
 make all 
 [BSP build complete]
-16:42:55 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-16:42:56 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-16:42:57 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-16:46:59 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-16:47:01 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-16:47:08 **** Build of configuration Nios II for project os ****
+15:14:37 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-16:47:09 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-16:47:10 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-16:47:11 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-17:06:17 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-17:06:18 **** Incremental Build of configuration Nios II for project os_bsp ****
+Info: Compiling sem.c to obj/default/sem.o
+nios2-elf-gcc -xc -MP -MMD -c -I../os_bsp//HAL/inc -I../os_bsp/ -I../os_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_SIM_OPTIMIZE -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/sem.o sem.c
+sem.c:16:19: error: expected '}' before ')' token
+   3.05482/10000000),
+                   ^
+sem.c:16:19: error: expected ',' or ';' before ')' token
+sem.c: In function 'main':
+sem.c:49:2: warning: implicit declaration of function 'alt_dcache_flush' [-Wimplicit-function-declaration]
+  alt_dcache_flush();
+  ^
+make: *** [obj/default/sem.o] Error 1
+15:14:39 **** Incremental Build of configuration Nios II for project os_bsp ****
 make all 
 [BSP build complete]
-17:06:23 **** Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-17:06:25 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-17:06:26 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-17:06:26 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-18:58:52 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-18:58:53 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-19:02:28 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-19:02:29 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-19:02:38 **** Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-19:02:40 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-19:02:41 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-19:02:42 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-00:50:02 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-00:50:04 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-00:50:09 **** Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-00:50:10 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-00:50:12 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-00:50:13 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-00:52:19 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-00:52:21 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-00:52:24 **** Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-00:52:26 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-00:52:27 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-00:52:28 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:04:21 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:04:22 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-02:04:25 **** Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:04:27 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:04:28 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-02:04:29 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:30:50 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:30:51 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-02:30:54 **** Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:30:56 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:30:57 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-02:30:58 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:38:02 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:38:03 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-02:38:07 **** Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:38:08 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:38:09 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-02:38:10 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:42:26 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:42:27 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-02:42:30 **** Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:42:31 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:42:33 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-02:42:34 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-03:30:50 **** Incremental Build of configuration Nios II for project os ****
+15:14:48 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
@@ -517,70 +259,64 @@ Info:                                    124 KBytes free for stack + heap.
 Info: Creating RUN_ON_HDL_SIMULATOR_ONLY_os.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source RUN_ON_HDL_SIMULATOR_ONLY_os.elf >RUN_ON_HDL_SIMULATOR_ONLY_os.objdump
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-03:30:55 **** Incremental Build of configuration Nios II for project os_bsp ****
+15:14:51 **** Incremental Build of configuration Nios II for project os_bsp ****
 make all 
 [BSP build complete]
-03:31:00 **** Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-03:31:01 **** Incremental Build of configuration Nios II for project os ****
+15:15:20 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-03:31:03 **** Incremental Build of configuration Nios II for project os_bsp ****
+15:15:22 **** Incremental Build of configuration Nios II for project os_bsp ****
 make all 
 [BSP build complete]
-03:31:03 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-03:52:28 **** Incremental Build of configuration Nios II for project os ****
+15:15:23 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-03:52:29 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-03:52:33 **** Build of configuration Nios II for project os ****
+15:53:37 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-03:52:35 **** Incremental Build of configuration Nios II for project os ****
+15:53:38 **** Incremental Build of configuration Nios II for project os_bsp ****
+make all 
+[BSP build complete]
+15:54:01 **** Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-03:52:36 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-03:52:37 **** Incremental Build of configuration Nios II for project os ****
+15:54:02 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-14:07:43 **** Incremental Build of configuration Nios II for project os ****
+15:54:03 **** Incremental Build of configuration Nios II for project os_bsp ****
+make all 
+[BSP build complete]
+15:54:04 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-14:07:44 **** Incremental Build of configuration Nios II for project os_bsp ****
+16:42:09 **** Incremental Build of configuration Nios II for project os ****
+make all 
+Info: Building ../os_bsp/
+K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
+[BSP build complete]
+[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
+16:42:10 **** Incremental Build of configuration Nios II for project os_bsp ****
 make all 
 [BSP build complete]
-14:08:22 **** Incremental Build of configuration Nios II for project os ****
+16:43:07 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
@@ -588,7 +324,7 @@ K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-dir
 Info: Compiling sem.c to obj/default/sem.o
 nios2-elf-gcc -xc -MP -MMD -c -I../os_bsp//HAL/inc -I../os_bsp/ -I../os_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_SIM_OPTIMIZE -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/sem.o sem.c
 sem.c: In function 'main':
-sem.c:49:2: warning: implicit declaration of function 'alt_dcache_flush' [-Wimplicit-function-declaration]
+sem.c:54:2: warning: implicit declaration of function 'alt_dcache_flush' [-Wimplicit-function-declaration]
   alt_dcache_flush();
   ^
 Info: Linking RUN_ON_HDL_SIMULATOR_ONLY_os.elf
@@ -599,190 +335,31 @@ Info:                                    124 KBytes free for stack + heap.
 Info: Creating RUN_ON_HDL_SIMULATOR_ONLY_os.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source RUN_ON_HDL_SIMULATOR_ONLY_os.elf >RUN_ON_HDL_SIMULATOR_ONLY_os.objdump
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-14:08:26 **** Incremental Build of configuration Nios II for project os_bsp ****
+16:43:09 **** Incremental Build of configuration Nios II for project os_bsp ****
 make all 
 [BSP build complete]
-14:14:14 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-14:14:15 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-14:14:19 **** Build of configuration Nios II for project os ****
+16:43:23 **** Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-14:14:21 **** Incremental Build of configuration Nios II for project os ****
+16:43:25 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-14:14:22 **** Incremental Build of configuration Nios II for project os_bsp ****
+16:43:26 **** Incremental Build of configuration Nios II for project os_bsp ****
 make all 
 [BSP build complete]
-14:14:23 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-14:48:53 **** Incremental Build of configuration Nios II for project os ****
+16:43:27 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-14:48:55 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-14:48:58 **** Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-14:49:00 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-14:49:01 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-14:49:02 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-15:06:03 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-15:06:04 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-15:06:08 **** Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-15:06:09 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-15:06:10 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-15:06:11 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-15:09:39 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-15:09:40 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-15:09:43 **** Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-15:09:45 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-15:09:46 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-15:09:47 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-15:17:07 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-15:17:08 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-15:17:12 **** Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-15:17:14 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-15:17:15 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-15:17:16 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-15:23:04 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-15:23:05 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-15:23:08 **** Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-15:23:10 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-15:23:11 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-15:23:11 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-01:24:24 **** Incremental Build of configuration Nios II for project os ****
+18:49:01 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
@@ -790,7 +367,7 @@ K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-dir
 Info: Compiling sem.c to obj/default/sem.o
 nios2-elf-gcc -xc -MP -MMD -c -I../os_bsp//HAL/inc -I../os_bsp/ -I../os_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_SIM_OPTIMIZE -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/sem.o sem.c
 sem.c: In function 'main':
-sem.c:49:2: warning: implicit declaration of function 'alt_dcache_flush' [-Wimplicit-function-declaration]
+sem.c:54:2: warning: implicit declaration of function 'alt_dcache_flush' [-Wimplicit-function-declaration]
   alt_dcache_flush();
   ^
 Info: Linking RUN_ON_HDL_SIMULATOR_ONLY_os.elf
@@ -801,85 +378,146 @@ Info:                                    124 KBytes free for stack + heap.
 Info: Creating RUN_ON_HDL_SIMULATOR_ONLY_os.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source RUN_ON_HDL_SIMULATOR_ONLY_os.elf >RUN_ON_HDL_SIMULATOR_ONLY_os.objdump
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-01:24:30 **** Incremental Build of configuration Nios II for project os_bsp ****
+18:49:06 **** Incremental Build of configuration Nios II for project os_bsp ****
 make all 
 [BSP build complete]
-01:24:56 **** Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-01:24:58 **** Incremental Build of configuration Nios II for project os ****
+18:52:36 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-01:24:59 **** Incremental Build of configuration Nios II for project os_bsp ****
+18:52:37 **** Incremental Build of configuration Nios II for project os_bsp ****
 make all 
 [BSP build complete]
-01:25:00 **** Incremental Build of configuration Nios II for project os ****
-make all 
-Info: Building ../os_bsp/
-K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
-[BSP build complete]
-[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:09:28 **** Incremental Build of configuration Nios II for project os ****
+18:53:21 **** Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:09:29 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-02:09:34 **** Build of configuration Nios II for project os ****
+18:53:22 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:09:35 **** Incremental Build of configuration Nios II for project os ****
+18:53:24 **** Incremental Build of configuration Nios II for project os_bsp ****
+make all 
+[BSP build complete]
+18:53:24 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-02:09:36 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-02:09:37 **** Incremental Build of configuration Nios II for project os ****
+19:40:48 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-21:47:02 **** Incremental Build of configuration Nios II for project os ****
+19:40:50 **** Incremental Build of configuration Nios II for project os_bsp ****
+make all 
+[BSP build complete]
+19:41:12 **** Incremental Build of configuration Nios II for project os ****
+make all 
+Info: Building ../os_bsp/
+K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
+[BSP build complete]
+Info: Compiling sem.c to obj/default/sem.o
+nios2-elf-gcc -xc -MP -MMD -c -I../os_bsp//HAL/inc -I../os_bsp/ -I../os_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_SIM_OPTIMIZE -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/sem.o sem.c
+sem.c: In function 'main':
+sem.c:54:2: warning: implicit declaration of function 'alt_dcache_flush' [-Wimplicit-function-declaration]
+  alt_dcache_flush();
+  ^
+Info: Linking RUN_ON_HDL_SIMULATOR_ONLY_os.elf
+nios2-elf-g++  -T'../os_bsp//linker.x' -msys-crt0='../os_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../os_bsp/  -msmallc  -Wl,-Map=RUN_ON_HDL_SIMULATOR_ONLY_os.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o RUN_ON_HDL_SIMULATOR_ONLY_os.elf obj/default/sem.o -lm -msys-lib=m
+nios2-elf-insert RUN_ON_HDL_SIMULATOR_ONLY_os.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --stderr_dev none --stdin_dev none --stdout_dev none --sopc_system_name SysFiltr --quartus_project_dir "D:/intelFPGA/18.1/NIOS_IIR" --jdi ../..//output_files/NIOS_IIR.jdi --sopcinfo D:/intelFPGA/18.1/NIOS_IIR/software/os_bsp/../../SysFiltr.sopcinfo
+Info: (RUN_ON_HDL_SIMULATOR_ONLY_os.elf) 3352 Bytes program size (code + initialized data).
+Info:                                    124 KBytes free for stack + heap.
+Info: Creating RUN_ON_HDL_SIMULATOR_ONLY_os.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source RUN_ON_HDL_SIMULATOR_ONLY_os.elf >RUN_ON_HDL_SIMULATOR_ONLY_os.objdump
+[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
+19:41:15 **** Incremental Build of configuration Nios II for project os_bsp ****
+make all 
+[BSP build complete]
+19:41:25 **** Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-21:47:08 **** Incremental Build of configuration Nios II for project os_bsp ****
-make all 
-[BSP build complete]
-21:47:30 **** Build of configuration Nios II for project os ****
+19:41:26 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-21:47:32 **** Incremental Build of configuration Nios II for project os ****
+19:41:27 **** Incremental Build of configuration Nios II for project os_bsp ****
+make all 
+[BSP build complete]
+19:41:28 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
 [BSP build complete]
 [RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
-21:47:34 **** Incremental Build of configuration Nios II for project os_bsp ****
+20:39:14 **** Incremental Build of configuration Nios II for project os ****
+make all 
+Info: Building ../os_bsp/
+K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
+[BSP build complete]
+[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
+20:39:15 **** Incremental Build of configuration Nios II for project os_bsp ****
 make all 
 [BSP build complete]
-21:47:35 **** Incremental Build of configuration Nios II for project os ****
+20:39:19 **** Build of configuration Nios II for project os ****
+make all 
+Info: Building ../os_bsp/
+K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
+[BSP build complete]
+[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
+20:39:21 **** Incremental Build of configuration Nios II for project os ****
+make all 
+Info: Building ../os_bsp/
+K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
+[BSP build complete]
+[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
+20:39:22 **** Incremental Build of configuration Nios II for project os_bsp ****
+make all 
+[BSP build complete]
+20:39:23 **** Incremental Build of configuration Nios II for project os ****
+make all 
+Info: Building ../os_bsp/
+K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
+[BSP build complete]
+[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
+21:50:38 **** Incremental Build of configuration Nios II for project os ****
+make all 
+Info: Building ../os_bsp/
+K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
+[BSP build complete]
+[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
+21:50:39 **** Incremental Build of configuration Nios II for project os_bsp ****
+make all 
+[BSP build complete]
+21:50:43 **** Build of configuration Nios II for project os ****
+make all 
+Info: Building ../os_bsp/
+K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
+[BSP build complete]
+[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
+21:50:45 **** Incremental Build of configuration Nios II for project os ****
+make all 
+Info: Building ../os_bsp/
+K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/
+[BSP build complete]
+[RUN_ON_HDL_SIMULATOR_ONLY_os build complete]
+21:50:46 **** Incremental Build of configuration Nios II for project os_bsp ****
+make all 
+[BSP build complete]
+21:50:47 **** Incremental Build of configuration Nios II for project os ****
 make all 
 Info: Building ../os_bsp/
 K:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../os_bsp/

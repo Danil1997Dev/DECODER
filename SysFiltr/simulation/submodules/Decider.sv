@@ -47,20 +47,28 @@ N = SAMPL_T/FRQ_SIGNAL)
     begin
 	   if (!reset_l)
 		  begin  
-						indicate <= 0;
-						valid <= 0;
+						indicate <= 1'bx;
+						valid <= 1'bx;
 		  end
 	else
 		  begin
-			 if (((relax_freq >= range[0]) && (relax_freq <= range[1])) && work) 
+			 if ( work ) 
 		 		 begin
+				   if ((relax_freq >= range[0]) && (relax_freq <= range[1]))
+					  begin
 						indicate <= 1;
 						valid <= 1;
+					  end
+				   else
+					  begin
+						indicate <= 0;
+						valid <= 0;
+					  end 
 		 		end  
 		 	 else
 				begin 
-						indicate <= 0;
-						valid <= 0;
+						indicate <= 1'bx;
+						valid <= 1'bx;
 				end
 		end
   end

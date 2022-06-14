@@ -34,21 +34,21 @@ Progress: Loading NIOS_IIR/NCO.qsys
 Progress: Loading NIOS_IIR/nios_irriir_hw.tcl
 Progress: Loading NIOS_IIR/Prob.qsys
 Progress: Loading NIOS_IIR/SysFiltr.qsys
-Info: D:/intelFPGA/18.1/NIOS_IIR/* matched 36 files in 0,07 seconds
+Info: D:/intelFPGA/18.1/NIOS_IIR/* matched 38 files in 0,08 seconds
 Info: D:/intelFPGA/18.1/NIOS_IIR/ip/**/* matched 0 files in 0,00 seconds
 Progress: Loading Decoder/NCO.qsys
-Info: D:/intelFPGA/18.1/NIOS_IIR/*/* matched 522 files in 0,01 seconds
-Info: D:\intelFPGA\18.1\NIOS_IIR\SysFiltr\testbench\SysFiltr.ipx described 0 plugins, 3 paths, in 0,08 seconds
+Info: D:/intelFPGA/18.1/NIOS_IIR/*/* matched 598 files in 0,01 seconds
+Info: D:\intelFPGA\18.1\NIOS_IIR\SysFiltr\testbench\SysFiltr.ipx described 0 plugins, 3 paths, in 0,09 seconds
 Progress: Loading testbench/SysFiltr_tb.qsys
-Info: D:/intelFPGA/18.1/NIOS_IIR/SysFiltr/testbench/* matched 12 files in 0,12 seconds
+Info: D:/intelFPGA/18.1/NIOS_IIR/SysFiltr/testbench/* matched 12 files in 0,11 seconds
 Info: D:/intelFPGA/18.1/NIOS_IIR/SysFiltr/testbench/*/* matched 8 files in 0,00 seconds
 Info: C:/Users/123/.altera.quartus/ip/18.1/**/* matched 0 files in 0,00 seconds
 Info: K:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_PROJECTDIR/* matched 0 files in 0,00 seconds
 Info: K:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_USERDIR/* matched 0 files in 0,00 seconds
 Info: K:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_GLOBALDIR/* matched 0 files in 0,00 seconds
 Info: Reading index K:\intelfpga_lite\18.1\ip\altera\altera_components.ipx
-Info: K:\intelfpga_lite\18.1\ip\altera\altera_components.ipx described 2035 plugins, 0 paths, in 0,12 seconds
-Info: K:/intelfpga_lite/18.1/ip/**/* matched 139 files in 0,12 seconds
+Info: K:\intelfpga_lite\18.1\ip\altera\altera_components.ipx described 2035 plugins, 0 paths, in 0,14 seconds
+Info: K:/intelfpga_lite/18.1/ip/**/* matched 139 files in 0,14 seconds
 Info: K:/intelfpga_lite/ip/**/* matched 0 files in 0,00 seconds
 Info: Reading index K:\intelfpga_lite\18.1\quartus\sopc_builder\builtin.ipx
 Info: K:\intelfpga_lite\18.1\quartus\sopc_builder\builtin.ipx described 83 plugins, 0 paths, in 0,01 seconds
@@ -57,8 +57,8 @@ Info: Reading index K:\intelfpga_lite\18.1\quartus\common\librarian\factories\in
 Info: K:\intelfpga_lite\18.1\quartus\common\librarian\factories\index.ipx described 151 plugins, 0 paths, in 0,01 seconds
 Info: K:/intelfpga_lite/18.1/quartus/common/librarian/factories/**/* matched 4 files in 0,01 seconds
 Info: K:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0,00 seconds
-Info: K:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0,26 seconds
-Info: K:/intelfpga_lite/18.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0,26 seconds
+Info: K:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0,27 seconds
+Info: K:/intelfpga_lite/18.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0,27 seconds
 Progress: 
 Progress: (2279) searching c:\intelfpga\18.1\probnik\oqpsk_mod (Quartus IP Search Path)
 Info: C:/intelfpga/18.1/probnik/oqpsk_mod matched 1 files in 0,00 seconds
@@ -173,7 +173,7 @@ Info: Reusing file D:/intelFPGA/18.1/NIOS_IIR/SysFiltr/testbench/SysFiltr_tb/sim
 Info: cpu: "SysFiltr_inst" instantiated altera_nios2_gen2 "cpu"
 Info: decoder: "SysFiltr_inst" instantiated Decoder "decoder"
 Info: ram: Starting RTL generation for module 'SysFiltr_ram'
-Info: ram:   Generation command is [exec K:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I K:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I K:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I K:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I K:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I K:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I K:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- K:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=SysFiltr_ram --dir=C:/Users/123/AppData/Local/Temp/alt9133_3711652002436083752.dir/0053_ram_gen/ --quartus_dir=K:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/123/AppData/Local/Temp/alt9133_3711652002436083752.dir/0053_ram_gen//SysFiltr_ram_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/123/AppData/Local/Temp/alt9133_3711652002436083752.dir/0053_ram_gen/  ]
+Info: ram:   Generation command is [exec K:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I K:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I K:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I K:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I K:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I K:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I K:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- K:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=SysFiltr_ram --dir=C:/Users/123/AppData/Local/Temp/alt9149_2035299115046795972.dir/0053_ram_gen/ --quartus_dir=K:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/123/AppData/Local/Temp/alt9149_2035299115046795972.dir/0053_ram_gen//SysFiltr_ram_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/123/AppData/Local/Temp/alt9149_2035299115046795972.dir/0053_ram_gen/  ]
 Info: ram: Done RTL generation for module 'SysFiltr_ram'
 Info: ram: "SysFiltr_inst" instantiated altera_avalon_onchip_memory2 "ram"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -184,20 +184,20 @@ Info: mm_interconnect_0: "SysFiltr_inst" instantiated altera_mm_interconnect "mm
 Info: irq_mapper: "SysFiltr_inst" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "SysFiltr_inst" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'SysFiltr_cpu_cpu'
-Info: cpu:   Generation command is [exec K:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I K:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I K:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I K:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I K:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I K:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I K:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I K:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I K:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- K:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=SysFiltr_cpu_cpu --dir=C:/Users/123/AppData/Local/Temp/alt9133_3711652002436083752.dir/0056_cpu_gen/ --quartus_bindir=K:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/123/AppData/Local/Temp/alt9133_3711652002436083752.dir/0056_cpu_gen//SysFiltr_cpu_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/123/AppData/Local/Temp/alt9133_3711652002436083752.dir/0056_cpu_gen/  ]
-Info: cpu: # 2022.05.21 18:56:44 (*) Starting Nios II generation
-Info: cpu: # 2022.05.21 18:56:44 (*)   Checking for plaintext license.
-Info: cpu: # 2022.05.21 18:56:44 (*)   Couldn't query license setup in Quartus directory K:/intelFPGA_lite/18.1/quartus/bin64/
-Info: cpu: # 2022.05.21 18:56:44 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2022.05.21 18:56:44 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2022.05.21 18:56:44 (*)   Plaintext license not found.
-Info: cpu: # 2022.05.21 18:56:44 (*)   No license required to generate encrypted Nios II/e.
-Info: cpu: # 2022.05.21 18:56:44 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2022.05.21 18:56:44 (*)   Creating all objects for CPU
-Info: cpu: # 2022.05.21 18:56:46 (*)   Creating 'C:/Users/123/AppData/Local/Temp/alt9133_3711652002436083752.dir/0056_cpu_gen//SysFiltr_cpu_cpu_nios2_waves.do'
-Info: cpu: # 2022.05.21 18:56:46 (*)   Generating RTL from CPU objects
-Info: cpu: # 2022.05.21 18:56:46 (*)   Creating plain-text RTL
-Info: cpu: # 2022.05.21 18:56:46 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec K:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I K:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I K:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I K:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I K:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I K:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I K:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I K:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I K:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- K:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=SysFiltr_cpu_cpu --dir=C:/Users/123/AppData/Local/Temp/alt9149_2035299115046795972.dir/0056_cpu_gen/ --quartus_bindir=K:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/123/AppData/Local/Temp/alt9149_2035299115046795972.dir/0056_cpu_gen//SysFiltr_cpu_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/123/AppData/Local/Temp/alt9149_2035299115046795972.dir/0056_cpu_gen/  ]
+Info: cpu: # 2022.06.07 01:10:06 (*) Starting Nios II generation
+Info: cpu: # 2022.06.07 01:10:06 (*)   Checking for plaintext license.
+Info: cpu: # 2022.06.07 01:10:07 (*)   Couldn't query license setup in Quartus directory K:/intelFPGA_lite/18.1/quartus/bin64/
+Info: cpu: # 2022.06.07 01:10:07 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2022.06.07 01:10:07 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2022.06.07 01:10:07 (*)   Plaintext license not found.
+Info: cpu: # 2022.06.07 01:10:07 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2022.06.07 01:10:07 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2022.06.07 01:10:07 (*)   Creating all objects for CPU
+Info: cpu: # 2022.06.07 01:10:08 (*)   Creating 'C:/Users/123/AppData/Local/Temp/alt9149_2035299115046795972.dir/0056_cpu_gen//SysFiltr_cpu_cpu_nios2_waves.do'
+Info: cpu: # 2022.06.07 01:10:08 (*)   Generating RTL from CPU objects
+Info: cpu: # 2022.06.07 01:10:08 (*)   Creating plain-text RTL
+Info: cpu: # 2022.06.07 01:10:09 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'SysFiltr_cpu_cpu'
 Info: cpu: "cpu" instantiated altera_nios2_gen2_unit "cpu"
 Info: cpu_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "cpu_data_master_translator"
@@ -222,7 +222,7 @@ Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "r
 Info: Reusing file D:/intelFPGA/18.1/NIOS_IIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: SysFiltr_tb: Done "SysFiltr_tb" with 30 modules, 96 files
+Info: SysFiltr_tb: Done "SysFiltr_tb" with 30 modules, 97 files
 Info: qsys-generate succeeded.
 Info: sim-script-gen --spd=D:\intelFPGA\18.1\NIOS_IIR\SysFiltr_tb.spd --output-directory=D:/intelFPGA/18.1/NIOS_IIR/SysFiltr/testbench/ --use-relative-paths=true
 Info: Doing: ip-make-simscript --spd=D:\intelFPGA\18.1\NIOS_IIR\SysFiltr_tb.spd --output-directory=D:/intelFPGA/18.1/NIOS_IIR/SysFiltr/testbench/ --use-relative-paths=true

@@ -69,7 +69,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  25 .jdi          0000354f  00000000  00000000  0000afec  2**0
                   CONTENTS, READONLY
- 26 .sopcinfo     0002d082  00000000  00000000  0000e53b  2**0
+ 26 .sopcinfo     0002d1cf  00000000  00000000  0000e53b  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 00000000 l    d  .entry	00000000 .entry
@@ -235,7 +235,7 @@ alt_after_alt_main:
 0000003c <main>:
 };
 
-float Ku = 10000000.0;
+float Ku = 2*3.14*440000;
 
 int main()
 { 

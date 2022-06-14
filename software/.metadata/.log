@@ -1,4 +1,4 @@
-!SESSION 2022-05-22 16:24:52.402 -----------------------------------------------
+!SESSION 2022-06-14 14:25:31.161 -----------------------------------------------
 eclipse.buildId=4.5.2.M20160212-1500
 java.version=1.8.0_05
 java.vendor=Oracle Corporation
@@ -6,7 +6,7 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
 Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization K:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization K:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 
-!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-05-22 16:25:07.378
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-06-14 14:26:04.799
 !MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Received fatal alert: handshake_failure. ; version: 1.100.0.v20160217-0435
 !STACK 0
 javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
@@ -37,11 +37,32 @@ javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
 	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
 	at java.lang.Thread.run(Unknown Source)
 
-!ENTRY org.eclipse.cdt.core 1 0 2022-05-22 16:26:39.310
-!MESSAGE Indexed 'os_bsp' (74 sources, 148 headers) in 2,83 sec: 5 223 declarations; 7 810 references; 53 unresolved inclusions; 3 syntax errors; 96 unresolved names (0,73 %)
+!ENTRY org.eclipse.cdt.core 1 0 2022-06-14 14:29:10.888
+!MESSAGE Indexed 'os_bsp' (74 sources, 61 headers) in 1,91 sec: 1 074 declarations; 2 003 references; 91 unresolved inclusions; 6 syntax errors; 169 unresolved names (5,2 %)
 
-!ENTRY org.eclipse.cdt.core 1 0 2022-05-22 16:26:40.727
+!ENTRY org.eclipse.cdt.core 1 0 2022-06-14 14:29:13.498
 !MESSAGE Indexed 'os' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0 %)
 
-!ENTRY com.altera.sbtgui.launch 4 0 2022-05-23 00:49:51.651
+!ENTRY org.eclipse.cdt.ui 4 0 2022-06-14 18:48:54.703
+!MESSAGE Error in CDT UI during reconcile
+!STACK 1
+C Model Exception: C Model Status [Element sem.c does not exist.]
+	at org.eclipse.cdt.internal.core.model.CElement.newNotPresentException(CElement.java:484)
+	at org.eclipse.cdt.internal.core.model.TranslationUnit.makeConsistent(TranslationUnit.java:573)
+	at org.eclipse.cdt.internal.core.model.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:62)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.execute(CModelOperation.java:341)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.run(CModelOperation.java:607)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.runOperation(CModelOperation.java:635)
+	at org.eclipse.cdt.internal.core.model.WorkingCopy.reconcile(WorkingCopy.java:362)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:78)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:63)
+	at org.eclipse.cdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:87)
+	at org.eclipse.cdt.internal.ui.text.CCompositeReconcilingStrategy.reconcile(CCompositeReconcilingStrategy.java:90)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.cdt.internal.ui.text.CReconciler.process(CReconciler.java:349)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+!SUBENTRY 1 org.eclipse.cdt.core 4 969 2022-06-14 18:48:54.705
+!MESSAGE Element sem.c does not exist.
+
+!ENTRY com.altera.sbtgui.launch 4 0 2022-06-14 21:50:30.884
 !MESSAGE Failed Executing: make sim SPD=D:/intelFPGA/18.1/NIOS_IIR/SysFiltr_tb.spd ELF=D:/intelFPGA/18.1/NIOS_IIR/software/os/RUN_ON_HDL_SIMULATOR_ONLY_os.elf ENABLE_VSIM_GUI=1 VSIM_DIR='K:/intelFPGA_lite/18.1/modelsim_ase/win32aloem'  return code: 2

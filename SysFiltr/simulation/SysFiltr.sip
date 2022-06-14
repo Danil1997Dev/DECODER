@@ -79,6 +79,7 @@ set_global_assignment -library "lib_SysFiltr" -name MISC_FILE [file join $::quar
 set_global_assignment -library "lib_SysFiltr" -name MISC_FILE [file join $::quartus(sip_path) "submodules/Filtr.sv"]
 set_global_assignment -library "lib_SysFiltr" -name MISC_FILE [file join $::quartus(sip_path) "submodules/Arith.sv"]
 set_global_assignment -library "lib_SysFiltr" -name MISC_FILE [file join $::quartus(sip_path) "submodules/Decider.sv"]
+set_global_assignment -library "lib_SysFiltr" -name MISC_FILE [file join $::quartus(sip_path) "submodules/FP_ABS.v"]
 set_global_assignment -library "lib_SysFiltr" -name MISC_FILE [file join $::quartus(sip_path) "submodules/SysFiltr_cpu.v"]
 set_global_assignment -library "lib_SysFiltr" -name MISC_FILE [file join $::quartus(sip_path) "submodules/SysFiltr_cpu_cpu.sdc"]
 set_global_assignment -library "lib_SysFiltr" -name MISC_FILE [file join $::quartus(sip_path) "submodules/SysFiltr_cpu_cpu.v"]
