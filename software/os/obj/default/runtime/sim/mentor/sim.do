@@ -39,11 +39,12 @@ add wave -radix decimal sim:/SysFiltr_tb/dut/decoder/sin
 add wave -radix decimal sim:/SysFiltr_tb/dut/decoder/cos 
 add wave -radix decimal sim:/SysFiltr_tb/dut/decoder/i_int 
 add wave -radix decimal sim:/SysFiltr_tb/dut/decoder/q_int 
+add wave -radix decimal sim:/SysFiltr_tb/dut/decoder/u_int 
 add wave -radix decimal sim:/SysFiltr_tb/dut/decoder/relax_freq
 add wave -radix decimal sim:/SysFiltr_tb/dut/decoder/gen_inst/delta 
 add wave -radix decimal sim:/SysFiltr_tb/dut/decoder/small_i 
-add wave -radix decimal sim:/SysFiltr_tb/dut/decoder/small_q 
-add wave -radix decimal sim:/SysFiltr_tb/dut/decoder/gen_inst/delta  
+add wave -radix decimal sim:/SysFiltr_tb/dut/decoder/small_q  
+add wave -radix decimal sim:/SysFiltr_tb/dut/decoder/small_u
 add wave -noupdate -divider {const}
 add wave -noupdate -radix float32 sim:/SysFiltr_tb/dut/decoder/filtr_i_inst/filtr/caff
 add wave -noupdate -radix float32 sim:/SysFiltr_tb/dut/decoder/filtr_q_inst/filtr/caff   
