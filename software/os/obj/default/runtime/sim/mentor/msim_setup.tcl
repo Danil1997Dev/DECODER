@@ -31,18 +31,18 @@
 # ----------------------------------------
 # # TOP-LEVEL TEMPLATE - BEGIN
 # #
-# # QSYS_SIMDIR is used in the Quartus-generated IP simulation script to
+# # DESKTOP_DIR is used in the Quartus-generated IP simulation script to
 # # construct paths to the files required to simulate the IP in your Quartus
 # # project. By default, the IP script assumes that you are launching the
 # # simulator from the IP script location. If launching from another
-# # location, set QSYS_SIMDIR to the output directory you specified when you
+# # location, set DESKTOP_DIR to the output directory you specified when you
 # # generated the IP script, relative to the directory from which you launch
 # # the simulator.
 # #
-# set QSYS_SIMDIR <script generation output directory>
+# set DESKTOP_DIR <script generation output directory>
 # #
 # # Source the generated IP simulation script.
-# source $QSYS_SIMDIR/mentor/msim_setup.tcl
+# source $DESKTOP_DIR/mentor/msim_setup.tcl
 # #
 # # Set any compilation options you require (this is unusual).
 # set USER_DEFINED_COMPILE_OPTIONS <compilation options>
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2022.05.16.23:31:25
+# ACDS 18.1 625 win32 2022.06.08.19:56:04
 
 # ----------------------------------------
 # Initialize variables
@@ -113,13 +113,12 @@ if ![info exists TOP_LEVEL_NAME] {
   set TOP_LEVEL_NAME "SysFiltr_tb"
 }
 
-if ![info exists QSYS_SIMDIR] { 
-  set QSYS_SIMDIR "./../"
+if ![info exists DESKTOP_DIR] { 
+  set DESKTOP_DIR "./../"
 }
 
- # change dir
 if ![info exists QUARTUS_INSTALL_DIR] { 
-  set QUARTUS_INSTALL_DIR "K:/intelfpga_lite/18.1/quartus/" 
+  set QUARTUS_INSTALL_DIR "K:/intelfpga_lite/18.1/quartus/"
 }
 
 if ![info exists USER_DEFINED_COMPILE_OPTIONS] { 
@@ -367,21 +366,21 @@ alias com {
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/segment_arr_tdl.v"                                                                            -work decoder                            
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/segment_sel.v"                                                                                -work decoder                            
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/sid_2c_1p.v"                                                                                  -work decoder                            
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/NCO.v"                                                                                        -work decoder     
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/FP_ABS.v"                                                        		-work decoder                                   
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/SUB_CNT.sv"                                                      -L altera_common_sv_packages -work decoder          
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/Decider.sv"                                                      -L altera_common_sv_packages -work decoder                                              
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/NCO.v"                                                                                        -work decoder                              
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/SUB_CNT.sv"                                                      -L altera_common_sv_packages -work decoder                            
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/Decoder.sv"                                                      -L altera_common_sv_packages -work decoder                            
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/ENUM_CNT.sv"                                                     -L altera_common_sv_packages -work decoder                            
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/FLL.sv"                                                          -L altera_common_sv_packages -work decoder                            
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/Generator.sv"                                                    -L altera_common_sv_packages -work decoder                            
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/Filtr.sv"                                                        -L altera_common_sv_packages -work decoder                                                 
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/Filtr.sv"                                                        -L altera_common_sv_packages -work decoder                            
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/Arith.sv"                                                        -L altera_common_sv_packages -work decoder                            
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/Decider.sv"                                                      -L altera_common_sv_packages -work decoder                            
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/FP_ABS.v"                                                                                     -work decoder                            
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/SysFiltr_cpu.v"                                                                               -work cpu                                
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/altera_avalon_reset_source.sv"                                   -L altera_common_sv_packages -work SysFiltr_inst_reset_bfm            
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/altera_avalon_clock_source.sv"                                   -L altera_common_sv_packages -work SysFiltr_inst_clk_bfm              
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/submodules/SysFiltr.v"                                                                                   -work SysFiltr_inst                      
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/SysFiltr_tb.sv"                                                                                                                                    
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$DESKTOP_DIR/SysFiltr/testbench/SysFiltr_tb/simulation/SysFiltr_tb.sv"                                                                                                                                                                                                                           
 }
 
 # ----------------------------------------
@@ -443,7 +442,7 @@ alias h {
   echo
   echo "SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module."
   echo
-  echo "QSYS_SIMDIR                                       -- Platform Designer base simulation directory."
+  echo "DESKTOP_DIR                                       -- Platform Designer base simulation directory."
   echo
   echo "QUARTUS_INSTALL_DIR                               -- Quartus installation directory."
   echo
