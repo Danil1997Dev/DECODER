@@ -6,7 +6,7 @@ set m mem
 
 set K 600
 set WIDTH 20
-set SAMPL 50000000
+set SAMPL 25000000
 set FRQ 440000
 set N [expr "$SAMPL/$FRQ"]
 set U [expr "2**($WIDTH-1)"]
