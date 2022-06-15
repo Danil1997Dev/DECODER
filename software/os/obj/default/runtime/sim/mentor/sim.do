@@ -5,7 +5,7 @@ set path "D:/intelFPGA/18.1/DECODER/"
 set m mem
 
 set K 600
-set WIDTH 20
+set WIDTH 14
 set SAMPL 25000000
 set FRQ 440000
 set N [expr "$SAMPL/$FRQ"]
@@ -51,4 +51,5 @@ add wave -noupdate -divider {const}
 add wave -noupdate -radix float32 sim:/SysFiltr_tb/dut/decoder/filtr_i_inst/filtr/caff
 add wave -noupdate -radix float32 sim:/SysFiltr_tb/dut/decoder/filtr_q_inst/filtr/caff   
 add wave -noupdate -radix float32 sim:/$name/dut/decoder/arith_inst/Ku
+add wave -position insertpoint sim:/$name/dut/decoder/dm_inst/range
 run -all

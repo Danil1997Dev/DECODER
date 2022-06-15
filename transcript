@@ -1,0 +1,3 @@
+# Reading K:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+source load_sim.tcl
+# couldn't read file "load_sim.tcl": no such file or directory

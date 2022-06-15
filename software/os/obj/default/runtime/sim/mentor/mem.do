@@ -8,7 +8,7 @@ puts $fileid "// memory data file (do not edit the following line - required for
 // instance=/TOP/mem
 // format=mti addressradix=d dataradix=d version=1.0 wordsperline=1"
 for {puts "Start"; set i 0} {$i < [expr "($K)*$N"]} {incr i;} {
- set Y [expr "$U*sin(2*$pi/($N)*$i-2*$pi/(2*$N)-5*$pi/(6)-$pi-$pi/(2))"];set D [expr int($Y)];puts $Y;seek $fileid 0 current;puts $fileid "$i: $D"; }
+ set Y [expr "$U*sin(2*$pi/($N)*$i-2*$pi/(2*$N)-5*$pi/(6)-2*$pi)"];set D [expr int($Y)];puts $Y;seek $fileid 0 current;puts $fileid "$i: $D"; }
  
  close $fileid 
 
@@ -40,7 +40,7 @@ puts $fileid "// memory data file (do not edit the following line - required for
 // instance=/TOP/mem
 // format=mti addressradix=d dataradix=d version=1.0 wordsperline=1"
 for {puts "Start"; set i 0} {$i < [expr "($K)*$N"]} {incr i;} {
- set Y [expr "$U*sin(2*$pi/($N)*$i-2*$pi/(2*$N)-2*$pi/(6)+5*$pi/(6))"];set D [expr int($Y)];puts $Y;seek $fileid 0 current;puts $fileid "$i: $D"; }
+ set Y [expr "$U*sin(2*$pi/($N)*$i-2*$pi/(2*$N)-2*$pi/(6)-5*$pi/(6)-2*$pi)"];set D [expr int($Y)];puts $Y;seek $fileid 0 current;puts $fileid "$i: $D"; }
  
  close $fileid 
 
